@@ -1,25 +1,26 @@
-package BankingSystem;
+package AllShapes;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BankAccount savingsaccount = new SavingsAccount(3000, 750);
-		BankAccount checkingaccount = new CheckingAccount(2000, 100);
+		Shape circle = new Circle(5.5);
+		Shape square = new Square(10.0);
+		Shape triangle = new Triangle(4.0, 1.5);
 		
-		withdrawfromaccount(savingsaccount, 500);
-		withdrawfromaccount(checkingaccount, 250);
+		DrawAndCalculateArea(circle);
+		DrawAndCalculateArea(square);
+		DrawAndCalculateArea(triangle);
 		
-		System.out.println("Savings Account Balance: " + savingsaccount.getBalance());
-		System.out.println("Checking Account Balance: " + checkingaccount.getBalance());
 		
 
 	}
 	
-	public static void withdrawfromaccount(BankAccount account, double amount) {
-		account.withdraw(amount);
-		
+	public static void DrawAndCalculateArea(Shape shape) {
+		shape.draw();
+		double area = shape.calculateArea();
+		System.out.println("Area: " + area);
 	}
 
 }
